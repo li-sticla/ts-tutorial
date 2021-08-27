@@ -1,5 +1,5 @@
 /** ts中的类 ************************************************************************/
-namespace classType {
+namespace ClassType {
   //基本的类
   class Point1 {
     x: number;

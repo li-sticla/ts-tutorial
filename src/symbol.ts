@@ -1,5 +1,5 @@
 /**unique symbol, symbol 子类型，独一无二的值 必须用const不能用let **********************/
-namespace symbolType {
+namespace SymbolType {
   const s: unique symbol = Symbol("a");
   console.log(s.toString());
   console.log(Boolean(s));

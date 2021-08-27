@@ -1,5 +1,5 @@
 /**函数类型 ***********************************************************************/
-namespace functionType {
+namespace FunctionType {
   // 可以给函数定义类型，这个定义包括对参数和返回值的类型定义
   const add1 = (x: number, y: number): number => {
     return x + y;

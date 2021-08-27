@@ -1,5 +1,5 @@
 /** 接口 ********************************************************************/
-namespace interfaceType {
+namespace InterfaceType {
   //使用接口定义任意结构
   interface Info {
     firstName: string;

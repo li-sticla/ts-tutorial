@@ -1,6 +1,6 @@
 /**类型断言 *****************************************************************/
 //告诉编译器某个值确实是我们所认为的值，从而让编译器进行正确的类型推断
-namespace assertion {
+namespace TypeAssertion {
   const getStrLength = (target: string | number): number => {
     if ((<string>target).length) {
       // 这种形式在JSX代码中不可以使用，而且也是TSLint不建议的写法

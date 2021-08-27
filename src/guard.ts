@@ -1,5 +1,5 @@
 /**类型保护 */
-namespace typeGuard {
+namespace TypeGuard {
   /** 使用 typeof 推导类型 ******************************************************************/
   // type 只能是number、string、boolean和symbol四种类型
   //   在一个条件块中使用，TypeScript 将会推导出在条件块中的的变量类型
