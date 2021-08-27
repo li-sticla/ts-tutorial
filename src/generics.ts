@@ -66,7 +66,7 @@ namespace genericType {
   const obj1 = { a: "aa", b: "bb" };
   //   getProp(obj1, "c"); // 类型“"c"”的参数不能赋给类型“"a" | "b"”的参数
 
-  /**泛型的兼容 */
+  /**泛型的兼容 ***************************************************************************/
   //泛型包含类型参数，这个类型参数可能是任意类型
   //使用时类型参数会被指定为特定的类型，而这个类型只影响使用了类型参数的部分。
   interface Data<T, U> {
@@ -77,4 +77,22 @@ namespace genericType {
   let data3: Data<string, boolean> = { data: "3" };
   //   data1 = data2; // error 不能将类型“Data<string>”分配给类型“Data<number>”。不能将类型“string”分配给类型“number”
   data2 = data3; //类型参数 U 未被使用
+
+  /** 泛型的实例化类型 ********************************************************************/
+  // 为一个特定的类型创建单独的版本，
+  // 可以通过将它拷贝到一个新变量里，并且用具体类型代替泛型的类型注解的方式来实现。
+  function id<T>(x: T) {
+    return x;
+  }
+
+  const idNum = id as { (x: number): number };
+  idNum(1);
+  class Foo<T> {
+    foo!: T;
+  }
+  const FooNumber = Foo as { new (): Foo<number> };
+  const fooNumber = new FooNumber();
+  fooNumber.foo; // number
+  //类型断言模式是不安全的,用于类的常见模式是使用继承：
+  class FooString extends Foo<string> {}
 }
