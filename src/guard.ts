@@ -1,7 +1,7 @@
 /**类型保护 */
 namespace TypeGuard {
   /** 使用 typeof 推导类型 ******************************************************************/
-  // type 只能是number、string、boolean和symbol四种类型
+  // 只能将number、string、boolean和symbol四种类型识别为类型保护
   //   在一个条件块中使用，TypeScript 将会推导出在条件块中的的变量类型
   function doSome(arg: number | string) {
     if (typeof arg === "number") {

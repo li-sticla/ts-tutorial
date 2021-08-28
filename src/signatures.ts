@@ -130,4 +130,22 @@ namespace IndexSignature {
   }
   type test = TypeList[keyof TypeList];
   // test的类型是string | number | object | null | undefined
+
+  //使用索引遍历结构，实现深拷贝
+  const deepClone = <T extends unknown>(source: T): T => {
+    let target = {} as T;
+    if (source !== null && typeof source === "object") {
+      if (Array.isArray(source)) {
+        return source.map((item) => deepClone(item)) as T;
+      }
+      for (let key in source) {
+        // key 的类型就是 Extract<keyof T, string>
+        if (source[key] !== null) {
+          // 对于数组，key 就是 index
+          target[key] = deepClone(source[key]);
+        }
+      }
+    } else target = source;
+    return target;
+  };
 }
