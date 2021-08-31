@@ -13,6 +13,7 @@ namespace InterfaceType {
   // getFullName({ firstName: "Lison" }); // 缺少必要属性lastName
 
   /**可选属性 ******************************************************************/
+  // 属性后加 ？ 表示可选
   interface Vegetables {
     color?: string;
     type: string;
@@ -116,7 +117,7 @@ namespace InterfaceType {
   interface Food {
     type: string;
   }
-  interface Poato extends Food, Vegetables {
+  interface Potato extends Food, Vegetables {
     radius: number;
   }
 
@@ -131,8 +132,8 @@ namespace InterfaceType {
       // 定义一个累加函数
       c.count++;
     };
-    c.count = 0; // TypeScript 支持直接给函数添加属性。再给这个函数添加一个count属性初始值为0
-    return c; // 最后返回这个函数对象
+    c.count = 0; // TypeScript 支持直接给函数添加属性。
+    return c; // 返回这个函数对象
   };
   const counter: Counter = getCounter(); // 通过getCounter函数得到这个计数器
   counter();
